@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { redirect } from "next/navigation";
 
 const getPostsData = async () => {
@@ -8,17 +8,24 @@ const getPostsData = async () => {
   return res.json();
 };
 
-const Posts = async ({ searchParams }: any) => {
-  const posts: any = await getPostsData();
+const Posts = ({ searchParams }: any) => {
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    if (searchParams.q === "type") {
-      const a = "sdsd";
-    } else if (searchParams?.q) {
-      redirect(`/posts?q=type`);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const fetchData = async () => {
+      if (searchParams.q === "type" && posts?.length === 0) {
+        const fetchedPosts: any = await getPostsData();
+        setPosts(fetchedPosts);
+      }
+    };
+
+    fetchData();
+  }, [searchParams.q, posts]);
+
+  if (searchParams.q !== "type") {
+    console.log("Data 2");
+    redirect("/posts?q=type");
+  }
 
   return posts.map((post: any) => <h1 key={post.id}>{post.title}</h1>);
 };
