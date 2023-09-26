@@ -1,10 +1,10 @@
 import PostsList from "./Posts";
 
-export default async function Posts() {
+export default async function Posts({ searchParams }: any) {
   return (
     <div>
       Posts
-      <PostsList />
+      <PostsList searchParams={searchParams} />
     </div>
   );
 }
