@@ -2,11 +2,13 @@ import PostsList from "./Posts";
 
 export const dynamic = "force-dynamic";
 
-export default async function Posts({ searchParams }: any) {
+const Posts = ({ searchParams }: any) => {
   return (
     <div>
       Posts
       <PostsList searchParams={searchParams} />
     </div>
   );
-}
+};
+
+export default Posts;
