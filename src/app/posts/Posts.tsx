@@ -24,7 +24,7 @@ const Posts = ({ searchParams }: any) => {
 
   if (searchParams.q !== "type") {
     console.log("Data 2");
-    redirect("/posts?q=type");
+    redirect(`/posts?q=type&type=${searchParams?.type}`);
   }
 
   return posts.map((post: any) => <h1 key={post.id}>{post.title}</h1>);

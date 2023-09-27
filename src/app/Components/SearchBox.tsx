@@ -28,7 +28,7 @@ const SearchBox = ({ placeholder }: any) => {
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               // keeping code open for future changes
-              location.href = `/posts?q=${searchValue}`;
+              location.href = `/posts?q=${searchValue}&type=${searchValue}`;
             }
           }}
           onChange={(e) => {
