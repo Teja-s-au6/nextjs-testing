@@ -1,4 +1,4 @@
-export default function sitemap() {
+export default async function sitemap() {
   return [
     {
       url: "https://nextjs-testing-ten-beige.vercel.app/",
