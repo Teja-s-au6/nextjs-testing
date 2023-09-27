@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SearchBox from "./SearchBox";
 
 export default function Navbar() {
   return (
@@ -8,6 +9,10 @@ export default function Navbar() {
       <Link href="/about">About</Link>
       <Link href="/about/us">About US</Link>
       <Link href="/about/someone">About Someone</Link>
+      <SearchBox
+        dataQaSelector="event_discovery_header_search"
+        placeholder="Search for events"
+      />
     </div>
   );
 }
