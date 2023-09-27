@@ -5,7 +5,7 @@ export default function sitemap() {
       lastModified: new Date(),
     },
     {
-      url: "https://nextjs-testing-ten-beige.vercel.app//posts",
+      url: "https://nextjs-testing-ten-beige.vercel.app/posts",
       lastModified: new Date(),
     },
   ];
