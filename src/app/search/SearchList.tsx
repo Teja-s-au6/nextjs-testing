@@ -20,7 +20,8 @@ const SearchList = ({ searchParams }: any) => {
     };
 
     fetchData();
-  }, [searchParams.q, posts]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (searchParams.q !== "type") {
     redirect(`/search?q=type&type=${searchParams?.type}`);
