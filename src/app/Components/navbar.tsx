@@ -9,10 +9,7 @@ export default function Navbar() {
       <Link href="/about">About</Link>
       <Link href="/about/us">About US</Link>
       <Link href="/about/someone">About Someone</Link>
-      <SearchBox
-        dataQaSelector="event_discovery_header_search"
-        placeholder="Search for events"
-      />
+      <SearchBox placeholder="Search for events" />
     </div>
   );
 }
